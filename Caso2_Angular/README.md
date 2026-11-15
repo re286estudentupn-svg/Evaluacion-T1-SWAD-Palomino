@@ -49,7 +49,7 @@ src/app/
 BilleteraComponent ── [saldo]="saldo()" (input) → NuevoMovimientoComponent
 BilleteraComponent ← (movimientoValido) (output) ── NuevoMovimientoComponent
 
-##Pruebas funcionales
+## Pruebas funcionales
 
 | # | Acción | Resultado esperado |
 |:---:|---|---|
