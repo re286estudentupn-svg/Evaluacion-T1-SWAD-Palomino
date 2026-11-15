@@ -34,20 +34,24 @@ npm run build
 
 ## Estructura
 
+```
 src/app/
-├── app.ts / app.html                    # contenedor principal
-├── movimiento.model.ts                  # interfaz Movimiento { tipo, monto }
-├── billetera/                           # componente PADRE
-│   ├── billetera.ts
-│   └── billetera.html
-└── nuevo-movimiento/                    # componente HIJO
-    ├── nuevo-movimiento.ts
-    └── nuevo-movimiento.html
+|-- app.ts / app.html           # contenedor principal
+|-- movimiento.model.ts         # interfaz Movimiento { tipo, monto }
+|-- billetera/                  # componente PADRE
+|   |-- billetera.ts
+|   +-- billetera.html
++-- nuevo-movimiento/           # componente HIJO
+    |-- nuevo-movimiento.ts
+    +-- nuevo-movimiento.html
+```
 
-## Flujo padre ↔ hijo
+## Flujo padre - hijo
 
-BilleteraComponent ── [saldo]="saldo()" (input) → NuevoMovimientoComponent
-BilleteraComponent ← (movimientoValido) (output) ── NuevoMovimientoComponent
+```
+BilleteraComponent -- [saldo]="saldo()" (input) --> NuevoMovimientoComponent
+BilleteraComponent <-- (movimientoValido) (output) -- NuevoMovimientoComponent
+```
 
 ## Pruebas funcionales
 
