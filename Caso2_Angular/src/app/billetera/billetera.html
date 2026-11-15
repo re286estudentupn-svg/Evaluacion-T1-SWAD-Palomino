@@ -1,0 +1,51 @@
+<div class="row g-4">
+  <!-- PADRE: saldo e historial -->
+  <div class="col-lg-6">
+    <div class="card shadow-sm h-100">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <span class="fw-semibold">BilleteraComponent</span>
+        <span class="badge bg-secondary">PADRE</span>
+      </div>
+
+      <div class="card-body">
+        <p class="text-muted mb-1">Saldo disponible</p>
+        <p class="display-6 fw-bold text-success">S/ {{ saldo() | number:'1.2-2' }}</p>
+
+        <h5 class="fw-semibold mt-4">Movimientos</h5>
+
+        @if (movimientos().length === 0) {
+          <div class="alert alert-secondary mb-0">Aún no hay movimientos</div>
+        }
+
+        <ul class="list-group">
+          @for (mov of movimientos(); track $index) {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge rounded-pill px-4 py-2"
+                    [class.bg-success]="mov.tipo === 'Recarga'"
+                    [class.bg-danger]="mov.tipo === 'Gasto'">
+                {{ mov.tipo }}
+              </span>
+              <span class="fw-bold"
+                    [class.text-success]="mov.tipo === 'Recarga'"
+                    [class.text-danger]="mov.tipo === 'Gasto'">
+                {{ mov.tipo === 'Recarga' ? '+' : '-' }} S/ {{ mov.monto | number:'1.2-2' }}
+              </span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIJO: recibe el saldo con input() y emite con output() -->
+  <div class="col-lg-6">
+    <app-nuevo-movimiento
+      [saldo]="saldo()"
+      (movimientoValido)="registrarMovimiento($event)" />
+  </div>
+</div>
+
+<div class="alert alert-light border mt-4 small mb-0">
+  <strong>El padre es dueño del estado.</strong>
+  El hijo solo valida y notifica una solicitud válida.
+</div>
