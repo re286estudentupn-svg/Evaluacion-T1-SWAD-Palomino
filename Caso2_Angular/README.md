@@ -65,4 +65,4 @@ BilleteraComponent <-- (movimientoValido) (output) -- NuevoMovimientoComponent
 
 ## Autor
 
-Integrantes del Grupo 15
+**Renzo Alexander Palomino Ramos**
