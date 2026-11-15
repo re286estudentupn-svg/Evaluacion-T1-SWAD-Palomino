@@ -46,8 +46,8 @@ src/app/
 
 ## Flujo padre ↔ hijo
 
-BilleteraComponent ── [saldo]="saldo()" (input) ──▶ NuevoMovimientoComponent
-BilleteraComponent ◀── (movimientoValido) (output) ── NuevoMovimientoComponent
+BilleteraComponent ── [saldo]="saldo()" (input) → NuevoMovimientoComponent
+BilleteraComponent ← (movimientoValido) (output) ── NuevoMovimientoComponent
 
 ##Pruebas funcionales
 
