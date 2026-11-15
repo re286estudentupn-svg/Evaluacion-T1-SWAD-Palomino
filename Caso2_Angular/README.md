@@ -41,5 +41,9 @@ src/app/
     ├── nuevo-movimiento.ts
     └── nuevo-movimiento.html
 
+## Flujo padre ↔ hijo
+
 BilleteraComponent ── [saldo]="saldo()" (input) ──▶ NuevoMovimientoComponent
 BilleteraComponent ◀── (movimientoValido) (output) ── NuevoMovimientoComponent
+
+Pruebas funcionales#AcciónResultado esperado1Abrir la aplicaciónSaldo S/ 250.00; "Aún no hay movimientos"2Recarga de S/ 100.00Saldo S/ 350.00; recarga en el historial3Gasto de S/ 50.00Saldo S/ 300.00; el gasto aparece antes que la recarga4Gasto de S/ 400.00Mensaje "Saldo insuficiente…" y botón deshabilitado; saldo sigue en S/ 300.005Monto 0, negativo o vacíoMensaje de error y botón deshabilitado; no cambia saldo ni historial
