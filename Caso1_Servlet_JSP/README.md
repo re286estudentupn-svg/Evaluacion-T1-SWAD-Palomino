@@ -65,4 +65,4 @@ src/main/webapp/WEB-INF/views/
 
 ## Autor
 
-- **Renzo Alexander Palomino Ramos**
+**Renzo Alexander Palomino Ramos**
