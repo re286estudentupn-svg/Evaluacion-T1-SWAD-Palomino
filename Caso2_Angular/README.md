@@ -30,4 +30,35 @@ npm start          # equivalente a: ng serve
 
 # (Opcional) Compilar para producción en carpeta dist/
 npm run build
+```
 
+## Estructura
+
+src/app/
+├── app.ts / app.html                    # contenedor principal
+├── movimiento.model.ts                  # interfaz Movimiento { tipo, monto }
+├── billetera/                           # componente PADRE
+│   ├── billetera.ts
+│   └── billetera.html
+└── nuevo-movimiento/                    # componente HIJO
+    ├── nuevo-movimiento.ts
+    └── nuevo-movimiento.html
+
+## Flujo padre ↔ hijo
+
+BilleteraComponent ── [saldo]="saldo()" (input) ──▶ NuevoMovimientoComponent
+BilleteraComponent ◀── (movimientoValido) (output) ── NuevoMovimientoComponent
+
+##Pruebas funcionales
+
+| # | Acción | Resultado esperado |
+|:---:|---|---|
+| **1** | Abrir la aplicación | Saldo S/ 250.00; historial vacío |
+| **2** | Registrar recarga de S/ 100.00 | Saldo S/ 350.00; recarga incorporada al historial |
+| **3** | Registrar gasto de S/ 50.00 | Saldo S/ 300.00; gasto aparece antes que recarga |
+| **4** | Intentar gasto de S/ 400.00 | Se rechaza; aparece un error; saldo continúa en S/ 300.00 |
+| **5** | Ingresar cero, negativo o monto vacío | Se rechaza; no cambia el saldo ni el historial |
+
+## Autor
+
+Integrantes del Grupo 15
