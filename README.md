@@ -1,1 +1,0 @@
-# Evaluacion-T1-SWAD-Palomino
