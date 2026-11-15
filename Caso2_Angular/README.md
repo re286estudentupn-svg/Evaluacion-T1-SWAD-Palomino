@@ -21,7 +21,7 @@ Billetera digital construida con **dos componentes funcionales** que se comunica
 
 ## Comandos de ejecución
 
-
+```bash
 # 1. Instalar dependencias del proyecto
 npm install
 
@@ -30,24 +30,4 @@ npm start          # equivalente a: ng serve
 
 # (Opcional) Compilar para producción en carpeta dist/
 npm run build
-
-
-## Estructura
-
-src/app/
-├── app.ts / app.html                    # contenedor principal
-├── movimiento.model.ts                  # interfaz Movimiento { tipo, monto }
-├── billetera/                           # componente PADRE
-│   ├── billetera.ts
-│   └── billetera.html
-└── nuevo-movimiento/                    # componente HIJO
-    ├── nuevo-movimiento.ts
-    └── nuevo-movimiento.html
-
-
-## Flujo padre ↔ hijo
-
-BilleteraComponent ── [saldo]="saldo()" (input) ──▶ NuevoMovimientoComponent
-BilleteraComponent ◀── (movimientoValido) (output) ── NuevoMovimientoComponent
-
 
