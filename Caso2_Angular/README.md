@@ -13,8 +13,8 @@ Billetera digital construida con **dos componentes funcionales** que se comunica
 
 | Herramienta | Versión |
 |---|---|
-| Node.js | 20.x+ |
-| npm | 10.x+ |
+| Node.js | 26.13.0  |
+| npm | 12.2.1 |
 | Angular / Angular CLI | 19.x+ (Standalone) |
 | Bootstrap | 5.3.x |
 | Editor | Visual Studio Code |
